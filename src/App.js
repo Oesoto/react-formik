@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Formulario from './views/Formulario/Formulario';
+import FormikApp from './views/Formulario/Formulario';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Formulario />
+                <FormikApp email="foo@bar.com" />
             </div>
         );
     }
