@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-
-import Counter from './containers/Counter/Counter';
-import './App.css';
+import Formulario from './views/Formulario/Formulario';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-       <Counter />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Formulario />
+            </div>
+        );
+    }
 }
 
 export default App;
