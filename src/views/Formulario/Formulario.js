@@ -5,7 +5,7 @@ import { withFormik, Form, Field } from 'formik';
 //yup ayuda a la validación de formularios
 // import Yup from 'yup';
 
-const Formulario = ({ values, handleChange, handleSubmit }) => (
+const Formulario = ({ values, handleReset, handleChange, handleSubmit }) => (
     // <form onSubmit={handleSubmit}>
     //     <input type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} />
     //     <input type="Password" name="password" placeholder="Password" value={values.password} onChange={handleChange} />
@@ -25,7 +25,9 @@ const Formulario = ({ values, handleChange, handleSubmit }) => (
             <option value="free">Free</option>
             <option value="premium">Premium</option>
         </Field>
-        <button>Hola</button>
+        <button type="button" onClick={handleReset}>
+            Hola
+        </button>
         <button type="submit">Submit</button>
     </Form>
 );
