@@ -25,7 +25,8 @@ const Formulario = ({ values, handleChange, handleSubmit }) => (
             <option value="free">Free</option>
             <option value="premium">Premium</option>
         </Field>
-        <button>Submit</button>
+        <button>Hola</button>
+        <button type="submit">Submit</button>
     </Form>
 );
 
@@ -40,8 +41,9 @@ const FormikApp = withFormik({
             plan: plan || 'free'
         };
     },
-    handleSubmit(value) {
-        console.log(value);
+    handleSubmit(values, bag) {
+        //Ejecuto el submitHandler personalizado definido en el componente contenedor
+        bag.props.onSubmit(values);
     }
 })(Formulario);
 
