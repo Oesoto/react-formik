@@ -16,7 +16,20 @@ const Formulario = ({ values, handleReset, handleChange, handleSubmit }) => (
     <Form>
         {/* Usando el componente Field no debo especificar value y onChange. Automaticamente se toman */}
         <Field type="email" name="email" placeholder="Email" />
-        <Field type="password" name="password" placeholder="Password" />
+        <br />
+        <div>
+            <p>Listado de elementos</p>
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 4</li>
+                <li>Elemento 5</li>
+                <li>Elemento 6</li>
+                <li><Field type="password" name="password" placeholder="Password" /></li>
+            </ul>
+        </div>
+        {/*<Field type="password" name="password" placeholder="Password" />*/}
         <label>
             <Field type="checkbox" name="newsletter" checked={values.newsletter} />
             Join our newsletter
@@ -29,6 +42,7 @@ const Formulario = ({ values, handleReset, handleChange, handleSubmit }) => (
             Hola
         </button>
         <button type="submit">Submit</button>
+        <p onClick={handleSubmit}>CLICK AQUI PARA HACER SUBMIT</p>
     </Form>
 );
 
@@ -37,10 +51,10 @@ const FormikApp = withFormik({
     //{email} es una propiedad del mismo nombre tomada del objeto Props
     mapPropsToValues({ email, password, newsletter, plan }) {
         return {
-            email: email || '',
-            password: password || '',
-            newsletter: newsletter || true,
-            plan: plan || 'free'
+            //email: email || '',
+            //password: password || '',
+            // newsletter: newsletter || true,
+            // plan: plan || 'free'
         };
     },
     handleSubmit(values, bag) {
@@ -50,3 +64,4 @@ const FormikApp = withFormik({
 })(Formulario);
 
 export default FormikApp;
+
